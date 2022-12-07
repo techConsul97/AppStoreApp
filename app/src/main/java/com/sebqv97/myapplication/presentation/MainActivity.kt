@@ -10,7 +10,9 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.sebqv97.myapplication.presentation.apps_list.MainScreen
+import com.ramcosta.composedestinations.DestinationsNavHost
+import com.sebqv97.myapplication.presentation.apps_list.NavGraphs
+import com.sebqv97.myapplication.presentation.common.components.TopBar
 import com.sebqv97.myapplication.presentation.ui.theme.AptoideTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -25,8 +27,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Scaffold(topBar = ) {
-                        
+                    Scaffold(topBar = { TopBar() }) {
+                       DestinationsNavHost(navGraph = NavGraphs.root)
                     }
                 }
             }
